@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 // The random number is a js implementation of the Xorshift PRNG
 const randseed = new Array(4); // Xorshift: [x, y, z, w] 32 bit values
 
@@ -61,13 +65,17 @@ function createImageData(size) {
 
 function buildOpts(opts) {
   const newOpts = {};
+  const resolution = 8; // should not be changed opepens are 8x8 fren
+
+  const updatedScale = opts.size / resolution;
 
   newOpts.seed = opts.seed || Math.floor(Math.random() * Math.pow(10, 16)).toString(16);
 
   seedrand(newOpts.seed);
 
-  newOpts.size = opts.size || 8;
-  newOpts.scale = opts.scale || 4;
+  newOpts.size = 8;
+  newOpts.scale = updatedScale;
+
   newOpts.color = opts.color || createColor();
   newOpts.bgcolor = opts.bgcolor || createColor();
   newOpts.spotcolor = opts.spotcolor || createColor();
@@ -177,7 +185,7 @@ const opepenGrid = [
   },
 ];
 
-export function renderIcon(opts, canvas) {
+function renderIcon(opts, canvas) {
   opts = buildOpts(opts || {});
   const imageData = createImageData(opts.size);
   const width = Math.sqrt(imageData.length);
@@ -272,10 +280,15 @@ export function renderIcon(opts, canvas) {
 
   return canvas;
 }
-export function createIcon(opts) {
+
+
+function createIcon(opts) {
   var canvas = document.createElement('canvas');
 
   renderIcon(opts, canvas);
 
   return canvas;
 }
+
+exports.renderIcon = renderIcon;
+exports.createIcon = createIcon;

@@ -13,7 +13,7 @@
 </head>
 <body>
   <script type="module">
-    import { createIcon } from '../src/blockies.mjs';
+    import { createIcon } from '../src/opepen.mjs';
 
     const addresses = [
       '0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359',
@@ -38,8 +38,7 @@
 
       const canvas = createIcon({
         seed,
-        size: 10,
-        scale: 8
+        size: 160,
       });
 
       document.body.appendChild(canvas)
