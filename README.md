@@ -19,8 +19,8 @@ import { createIcon } from 'opepepen-standard';
 
 var icon = createIcon({ // All options are optional
     seed: 'randstring', // seed used to generate icon data, default: random
-    color: '#dfe', // to manually specify the icon color, default: random
-    bgcolor: '#aaa', // choose a different background color, default: white
+    color: '#dfe', // optional
+    bgcolor: '#aaa', // optional
     size: 32, // width/height of the icon in blocks, default: 32
 });
 
