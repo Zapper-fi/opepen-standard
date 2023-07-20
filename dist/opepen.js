@@ -74,7 +74,7 @@ function buildOpts(opts) {
   seedrand(newOpts.seed);
 
   newOpts.size = 8;
-  newOpts.scale = updatedScale;
+  newOpts.scale = updatedScale || 4;
 
   newOpts.color = opts.color || createColor();
   newOpts.bgcolor = opts.bgcolor || createColor();
