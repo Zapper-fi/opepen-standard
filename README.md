@@ -15,7 +15,7 @@ Install
 
 
 ```javascript
-import { createIcon } from 'opepepen-standard';
+import { createIcon } from 'opepen-standard';
 
 var icon = createIcon({ // All options are optional
     seed: 'randstring', // seed used to generate icon data, default: random
@@ -33,7 +33,7 @@ React
 ```javascript
 import React from 'react';
 
-import { createIcon } from 'opepepen-standard';
+import { createIcon } from 'opepen-standard';
 
 export const OpepenAvatar: React.FC<{ address: string; size: number }> = ({ address, size }) => {
   const canvas = createIcon({
