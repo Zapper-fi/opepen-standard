@@ -3,10 +3,16 @@ Blockies
 
 A tiny library for generating opepen identicons.
 
-![Sample blockies image](examples/sample.png "Blockies")
+![Sample blockies image](https://raw.githubusercontent.com/Zapper-fi/opepen-standard/master/examples/sample.png "Opepen")
 
 Browser
 ---
+
+Install
+-----
+
+    npm i opepen-standard
+
 
 ```javascript
 import { createIcon } from 'opepepen-standard';
