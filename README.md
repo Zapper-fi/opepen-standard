@@ -1,4 +1,4 @@
-Blockies
+Opepen Standard
 ========
 
 A tiny library for generating opepen identicons.
