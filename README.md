@@ -50,7 +50,7 @@ export const OpepenAvatar: React.FC<{ address: string; size: number }> = ({ addr
 Notes
 -----
 
-Always use a size that is dividable by 8, otherwise the opepens will not render as well. As the default Opepen grid is 8x8.
+Because the default Opepen grid is 8x8, it is better to use a size that is dividable by 8.
 
 
 Build
