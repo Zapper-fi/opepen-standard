@@ -1,31 +1,46 @@
 {
-  "name": "opepen-standard",
-  "version": "1.0.0",
+  "name": "@visualizevalue/opepicons",
+  "version": "0.1.0",
   "description": "A tiny library for generating opepen blockies.",
-  "main": "dist/opepen.js",
-  "module": "src/opepen.mjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "rollup -f cjs src/opepen.mjs -o dist/opepen.js && minify dist/opepen.js -o dist/opepen.min.js",
-    "serve-examples": "node --experimental-modules examples/server.mjs"
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "serve-examples": "node examples/server.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zapper-fi/opepen-standard.gut"
+    "url": "git+https://github.com/visualizevalue/opepicons.git"
   },
   "author": "Seb Audet",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zapper-fi/opepen-standard/issues"
+    "url": "https://github.com/visualizevalue/opepicons/issues"
   },
-  "homepage": "https://github.com/Zapper-fi/opepen-standard#readme",
+  "homepage": "https://github.com/visualizevalue/opepicons#readme",
   "devDependencies": {
-    "babel-minify": "^0.4.3",
-    "koa": "^2.5.2",
-    "koa-static": "^5.0.0",
-    "rollup": "^0.64.1"
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3"
   },
-  "files": [
-    "src/",
-    "dist/"
-  ]
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
 }
